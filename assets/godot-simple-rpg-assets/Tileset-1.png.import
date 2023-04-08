@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c01iji2veiqsw"
-path="res://.godot/imported/Tileset-1.png-29f06e4e2c739f83b6e2fc87b17af230.ctex"
+uid="uid://cs3qgpc1sc8p7"
+path="res://.godot/imported/Tileset-1.png-9feee63ac2fd5a26c00bd343f0f1cd7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/godot-simple-rpg-assets/Outdoor and Forest Tileset/Tilesets/Tileset-1.png"
-dest_files=["res://.godot/imported/Tileset-1.png-29f06e4e2c739f83b6e2fc87b17af230.ctex"]
+source_file="res://assets/godot-simple-rpg-assets/Tileset-1.png"
+dest_files=["res://.godot/imported/Tileset-1.png-9feee63ac2fd5a26c00bd343f0f1cd7d.ctex"]
 
 [params]
 
