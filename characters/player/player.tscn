@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckuae6vwt4jhu"]
+
+[ext_resource type="Texture2D" uid="uid://bnsot47xpfu8a" path="res://assets/godot-simple-rpg-assets/Simple/Entities/Player/player_down_idle_1.png" id="1_a0ks4"]
+[ext_resource type="Script" path="res://characters/player/player.gd" id="1_hy87r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8dpnr"]
+radius = 4.0
+height = 14.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_hy87r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a0ks4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8dpnr")

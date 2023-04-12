@@ -1,8 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbpgny3evifs4"]
+[gd_scene load_steps=13 format=3 uid="uid://dbpgny3evifs4"]
 
 [ext_resource type="Texture2D" uid="uid://ciovhvxsw67qp" path="res://assets/godot-simple-rpg-assets/Outdoor and Forest Tileset/Tilesets/Tileset-3.png" id="1_3cm0v"]
 [ext_resource type="Texture2D" uid="uid://c5ky05hxu4kf3" path="res://assets/godot-simple-rpg-assets/Outdoor and Forest Tileset/Tilesets/Tileset-2.png" id="2_4d6bx"]
 [ext_resource type="Texture2D" uid="uid://c01iji2veiqsw" path="res://assets/godot-simple-rpg-assets/Outdoor and Forest Tileset/Tilesets/Tileset-1.png" id="3_5a6p3"]
+[ext_resource type="PackedScene" uid="uid://ckuae6vwt4jhu" path="res://characters/player/player.tscn" id="4_ygwj0"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_hrw8i"]
+tile_data = PackedInt32Array(65536, 196609, 8, 1, 262145, 7, 65537, 262145, 8, 2, 327681, 7, 65538, 327681, 8)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_j3kpb"]
+tile_data = PackedInt32Array(0, 2, 7, 65536, 196610, 8, 131072, 196610, 8, 1, 65538, 7, 2, 65538, 7, 3, 65538, 7, 4, 65538, 7, 5, 65538, 7, 6, 262146, 6, 7, 65538, 7, 8, 65538, 7, 9, 65538, 7, 10, 65538, 7, 11, 65538, 7, 12, 65538, 7, 13, 65538, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okqds"]
 resource_name = "background"
@@ -505,7 +512,6 @@ texture = ExtResource("2_4d6bx")
 0:4/0 = 0
 3:4/size_in_atlas = Vector2i(3, 3)
 3:4/0 = 0
-3:7/0 = 0
 3:9/size_in_atlas = Vector2i(3, 2)
 3:9/0 = 0
 3:11/size_in_atlas = Vector2i(3, 1)
@@ -520,6 +526,12 @@ texture = ExtResource("2_4d6bx")
 2:7/0 = 0
 0:8/size_in_atlas = Vector2i(1, 2)
 0:8/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+5:8/0 = 0
+4:8/0 = 0
+3:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggcmm"]
 resource_name = "fences"
@@ -530,16 +542,12 @@ texture = ExtResource("3_5a6p3")
 4:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
-1:6/0/terrain = 0
 2:6/0 = 0
-2:6/0/terrain = 0
 3:6/0 = 0
 4:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
-1:7/0/terrain = 0
 2:7/0 = 0
-2:7/0/terrain = 0
 3:7/0 = 0
 0:8/0 = 0
 2:8/0 = 0
@@ -591,6 +599,30 @@ texture = ExtResource("3_5a6p3")
 5:5/0 = 0
 6:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pb7y8"]
+texture = ExtResource("2_4d6bx")
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+3:0/size_in_atlas = Vector2i(3, 3)
+3:0/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/size_in_atlas = Vector2i(3, 3)
+0:4/0 = 0
+3:4/size_in_atlas = Vector2i(3, 3)
+3:4/0 = 0
+3:9/size_in_atlas = Vector2i(3, 2)
+3:9/0 = 0
+6:7/size_in_atlas = Vector2i(2, 2)
+6:7/0 = 0
+6:9/size_in_atlas = Vector2i(2, 2)
+6:9/0 = 0
+4:7/size_in_atlas = Vector2i(2, 2)
+4:7/0 = 0
+3:8/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_hk07i"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "light green grass"
@@ -614,6 +646,9 @@ sources/0 = SubResource("TileSetAtlasSource_okqds")
 sources/1 = SubResource("TileSetAtlasSource_mxe82")
 sources/2 = SubResource("TileSetAtlasSource_ggcmm")
 sources/4 = SubResource("TileSetAtlasSource_yex3e")
+sources/5 = SubResource("TileSetAtlasSource_pb7y8")
+pattern_0 = SubResource("TileMapPattern_hrw8i")
+pattern_1 = SubResource("TileMapPattern_j3kpb")
 
 [node name="TileMap" type="TileMap"]
 position = Vector2(85, -2)
@@ -641,4 +676,8 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 1
-layer_3/tile_data = PackedInt32Array(196609, 65538, 7, 196610, 65538, 7, 196611, 65538, 7, 196612, 65538, 7, 196613, 65538, 7, 196608, 2, 7, 262144, 196610, 8, 327680, 196610, 8, 393216, 196610, 8, 196614, 262146, 6, 458752, 131074, 6, 524287, 65538, 7, 524286, 65538, 7, 196615, 65538, 7, 196616, 65538, 7, 196617, 65538, 7, 196618, 65538, 7, 196619, 65538, 7, 196620, 65538, 7, 196621, 65538, 7, 786439, 262148, 0, 851975, 262148, 1, 917511, 262148, 2, 786440, 327684, 0, 851976, 327684, 1, 917512, 327684, 2, 786441, 393220, 0, 851977, 393220, 1, 917513, 393220, 2, 720903, 262148, 3, 720904, 327684, 3, 720905, 393220, 3, 720902, 393217, 9, 524299, 393217, 9, 983041, 393217, 7, 983042, 393217, 9, 1114117, 393217, 9, 1179655, 393217, 7, 1179656, 393217, 7, 1179661, 196609, 4, 1245197, 1, 3, 1179650, 196609, 0, 1310725, 196609, 0, 1376261, 262145, 3, 1310732, 458753, 4)
+layer_3/tile_data = PackedInt32Array(196609, 65538, 7, 196610, 65538, 7, 196611, 65538, 7, 196612, 65538, 7, 196613, 65538, 7, 196608, 2, 7, 262144, 196610, 8, 327680, 196610, 8, 393216, 196610, 8, 196614, 262146, 6, 458752, 131074, 6, 524287, 65538, 7, 524286, 65538, 7, 196615, 65538, 7, 196616, 65538, 7, 196618, 65538, 7, 196619, 65538, 7, 196620, 65538, 7, 196621, 131074, 7, 786439, 262148, 0, 851975, 262148, 1, 917511, 262148, 2, 786440, 327684, 0, 851976, 327684, 1, 917512, 327684, 2, 786441, 393220, 0, 851977, 393220, 1, 917513, 393220, 2, 720903, 262148, 3, 720904, 327684, 3, 720905, 393220, 3, 720902, 393217, 9, 524299, 393217, 9, 983041, 393217, 7, 983042, 393217, 9, 1114117, 393217, 9, 1179655, 393217, 7, 1179656, 393217, 7, 1179661, 196609, 4, 1245197, 1, 3, 1179650, 196609, 0, 1310725, 196609, 0, 1376261, 262145, 3, 1310732, 458753, 4, 393225, 196609, 8, 327690, 262145, 7, 393226, 262145, 8, 327691, 327681, 7, 393227, 327681, 8, 196617, 65538, 7, 458755, 65538, 9, 458756, 65538, 9, 458757, 65538, 9, 458758, 65538, 9, 458759, 65538, 9, 458760, 65538, 9, 458761, 65538, 9, 458762, 65538, 9, 458763, 65538, 9, 458764, 65538, 9, 458765, 131074, 9, 262157, 131074, 8, 327693, 131074, 8, 393229, 131074, 8)
+
+[node name="Player" parent="." instance=ExtResource("4_ygwj0")]
+position = Vector2(55, 14)
+speed = 300
