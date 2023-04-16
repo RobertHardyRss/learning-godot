@@ -1,9 +1,9 @@
-extends Area2D
+extends PhysicsBody2D
 
 signal hit 
 
 # player speed in pixels / sec
-@export var speed = 400
+@export var speed = 2
 var screen_size
 
 #func _ready():
@@ -46,6 +46,9 @@ func _process(delta):
 	
 #	position.x = clamp(position.x, 0, screen_size.x)
 #	position.y = clamp(position.y, 0, screen_size.y)
+
+	move_and_collide(velocity)
+	
 
 
 #func _on_body_entered(body):

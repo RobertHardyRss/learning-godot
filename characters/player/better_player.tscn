@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbbfw1mljcoed"]
+
+[ext_resource type="Script" path="res://characters/player/better_player.gd" id="1_7r81o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ipjdh"]
+
+[node name="BetterPlayer" type="CharacterBody2D"]
+script = ExtResource("1_7r81o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ipjdh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

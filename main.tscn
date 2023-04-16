@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddalo6todrv82"]
+
+[ext_resource type="PackedScene" uid="uid://dbpgny3evifs4" path="res://tile_map.tscn" id="1_6gkwk"]
+[ext_resource type="PackedScene" uid="uid://ckuae6vwt4jhu" path="res://characters/player/player.tscn" id="2_kx10y"]
+
+[node name="main" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_6gkwk")]
+position = Vector2(59, 223)
+layer_3/z_index = 0
+
+[node name="Player" parent="." instance=ExtResource("2_kx10y")]
+position = Vector2(97, 246)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2(8, -19)
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(105, 227)
