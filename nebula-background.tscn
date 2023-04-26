@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bop7w6w2vwjbn"]
+
+[ext_resource type="Texture2D" uid="uid://k32ddwgrs4ss" path="res://assets/Green Nebula/Green Nebula 7 - 1024x1024.png" id="1_hkdmo"]
+[ext_resource type="PackedScene" uid="uid://ckuae6vwt4jhu" path="res://characters/player/player.tscn" id="2_crilx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 3
+motion_mirroring = Vector2(1024, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_hkdmo")
+
+[node name="Player" parent="." instance=ExtResource("2_crilx")]
+position = Vector2(455, 146)
+speed = 3
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(455, 146)
+zoom = Vector2(3, 3)
